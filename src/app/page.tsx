@@ -172,10 +172,11 @@ export default function Home() {
             <div className="space-y-6 text-base leading-relaxed text-neutral-300">
               <p>
                 Brainrust is a four-piece from Windsor, Ontario, playing
-                emotionally charged, guitar-driven rock, for fans of Cloud
-                Nothings, Polvo, or Pile. Their sound balances angular
-                songwriting with dynamic melody and structure, constantly
-                swinging between tension and release.
+                emotionally charged, guitar-driven rock. Their sound balances
+                angular songwriting with dynamic melody and structure,
+                constantly swinging between tension and release. You may enjoy
+                Brainrust if you like Cloud Nothings, Polvo, Pile, or similar
+                bands.
               </p>
               <p>
                 The band released their debut album{" "}
