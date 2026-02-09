@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaBandcamp, FaFacebook, FaInstagram } from "react-icons/fa";
 import NavigationHeader from "../components/NavigationHeader";
+import FadeUp from "../components/FadeUp";
 
 const members = [
   { name: "James Brown", role: "Guitar / Vocals" },
@@ -74,11 +75,8 @@ export default function Home() {
         </section>
 
         {/* ── Video ── */}
-        <section id="video" className="py-24 px-6">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-xs tracking-[0.3em] uppercase text-muted mb-12">
-              Video
-            </h2>
+        <section id="video" className="scroll-mt-20 py-24 px-6">
+          <FadeUp className="max-w-4xl mx-auto">
             <div className="space-y-16">
               <div>
                 <div className="aspect-video w-full bg-neutral-900">
@@ -97,12 +95,12 @@ export default function Home() {
               </div>
               {/* Add additional videos here */}
             </div>
-          </div>
+          </FadeUp>
         </section>
 
         {/* ── Music ── */}
-        <section id="music" className="py-24 px-6">
-          <div className="max-w-4xl mx-auto">
+        <section id="music" className="scroll-mt-20 py-24 px-6">
+          <FadeUp className="max-w-4xl mx-auto">
             <h2 className="text-xs tracking-[0.3em] uppercase text-muted mb-12">
               Music
             </h2>
@@ -160,12 +158,15 @@ export default function Home() {
                 brainrustmusic@gmail.com
               </a>
             </div>
-          </div>
+          </FadeUp>
         </section>
 
         {/* ── About ── */}
-        <section id="about" className="py-24 px-6 border-t border-neutral-800">
-          <div className="max-w-2xl mx-auto">
+        <section
+          id="about"
+          className="scroll-mt-20 py-24 px-6 border-t border-neutral-800"
+        >
+          <FadeUp className="max-w-2xl mx-auto">
             <h2 className="text-xs tracking-[0.3em] uppercase text-muted mb-12">
               About
             </h2>
@@ -186,12 +187,12 @@ export default function Home() {
                 refreshed lineup.
               </p>
             </div>
-          </div>
+          </FadeUp>
         </section>
 
         {/* ── Band Photo + Members ── */}
         <section className="py-24 px-6 border-t border-neutral-800">
-          <div className="max-w-3xl mx-auto">
+          <FadeUp className="max-w-3xl mx-auto">
             <Image
               src="/brainrust-promo.png"
               alt="Brainrust — band photo"
@@ -213,12 +214,15 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          </div>
+          </FadeUp>
         </section>
 
         {/* ── Shows ── */}
-        <section id="shows" className="py-24 px-6 border-t border-neutral-800">
-          <div className="max-w-2xl mx-auto">
+        <section
+          id="shows"
+          className="scroll-mt-20 py-24 px-6 border-t border-neutral-800"
+        >
+          <FadeUp className="max-w-2xl mx-auto">
             <h2 className="text-xs tracking-[0.3em] uppercase text-muted mb-12">
               Live
             </h2>
@@ -262,15 +266,15 @@ export default function Home() {
                 <span className="text-sm">w/ Cory Hanson</span>
               </li>
             </ul>
-          </div>
+          </FadeUp>
         </section>
 
         {/* ── Contact ── */}
         <section
           id="contact"
-          className="py-24 px-6 border-t border-neutral-800"
+          className="scroll-mt-20 py-24 px-6 border-t border-neutral-800"
         >
-          <div className="max-w-2xl mx-auto">
+          <FadeUp className="max-w-2xl mx-auto">
             <h2 className="text-xs tracking-[0.3em] uppercase text-muted mb-12">
               Contact
             </h2>
@@ -283,38 +287,28 @@ export default function Home() {
             >
               brainrustmusic@gmail.com
             </a>
-          </div>
+          </FadeUp>
         </section>
       </main>
 
       {/* ── Footer ── */}
       <footer className="py-12 px-6 border-t border-neutral-800">
-        <div className="max-w-2xl mx-auto">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
-            <a
-              href="mailto:brainrustmusic@gmail.com"
-              className="text-sm text-fg hover:text-white underline underline-offset-4 decoration-neutral-600 hover:decoration-white transition-colors"
-            >
-              brainrustmusic@gmail.com
-            </a>
-            <div className="flex items-center gap-4">
-              {socialLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={link.label}
-                  className="text-muted hover:text-fg transition-colors"
-                >
-                  <link.icon size={16} />
-                </Link>
-              ))}
-            </div>
+        <div className="max-w-2xl mx-auto flex items-center justify-between">
+          <p className="text-xs text-muted">&copy; 2026 Brainrust</p>
+          <div className="flex items-center gap-4">
+            {socialLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={link.label}
+                className="text-muted hover:text-fg transition-colors"
+              >
+                <link.icon size={16} />
+              </Link>
+            ))}
           </div>
-          <p className="text-xs text-muted mt-6 text-center sm:text-left">
-            &copy; 2026 Brainrust. All rights reserved.
-          </p>
         </div>
       </footer>
     </>
