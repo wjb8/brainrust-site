@@ -182,15 +182,7 @@ export default function Home() {
                 <em className="text-fg">Indistinct Chatter</em> in 2024,
                 alongside a self-produced video for the single
                 &ldquo;Ordinary,&rdquo; and is now performing a new set with a
-                refreshed lineup. Featuring James Brown and Kyle Marchand on
-                guitars and vocals, with Matt Findlater on bass and Nick
-                Hildenbrand on drums, Brainrust is actively playing shows and
-                expanding beyond their hometown.
-              </p>
-              <p>
-                The band is currently writing their first fully collaborative
-                record and focusing on building momentum through regional shows
-                and new releases.
+                refreshed lineup.
               </p>
             </div>
           </div>
