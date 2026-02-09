@@ -148,30 +148,26 @@ export default function Home() {
             </h2>
             <div className="space-y-6 text-base leading-relaxed text-neutral-300">
               <p>
-                Brainrust is a four-piece rock band from Windsor, Ontario,
-                crafting emotionally charged, exploratory music that blends
-                elements of experimental, alternative, and post-hardcore
-                traditions.
+                Brainrust is a four-piece from Windsor, Ontario, playing
+                emotionally charged, guitar-driven rock, for fans of Cloud
+                Nothings, Polvo, or Pile. Their sound balances angular
+                songwriting with dynamic melody and structure, constantly
+                swinging between tension and release.
               </p>
               <p>
-                Formed in 2022 from the merging of two long-running solo
-                projects, Brainrust began as an outlet for songs written as far
-                back as 2016. Founding members James Brown (guitar/vocals) and
-                Kyle Marchand (guitar/vocals) brought their collaborative energy
-                into a full-band dynamic with Matt Findlater (bass) and Nick
-                Hildenbrand (drums), solidifying a lineup that combines dynamic
-                musicianship with a reflective edge.
+                The band released their debut album{" "}
+                <em className="text-fg">Indistinct Chatter</em> in 2024,
+                alongside a self-produced video for the single
+                &ldquo;Ordinary,&rdquo; and is now performing a new set with a
+                refreshed lineup. Featuring James Brown and Kyle Marchand on
+                guitars and vocals, with Matt Findlater on bass and Nick
+                Hildenbrand on drums, Brainrust is actively playing shows and
+                expanding beyond their hometown.
               </p>
               <p>
-                The band&apos;s 2024 debut album,{" "}
-                <em className="text-fg">Indistinct Chatter</em>, showcased this
-                range and was accompanied by a self-produced video for the
-                single &ldquo;Ordinary.&rdquo; Currently, Brainrust is preparing
-                their first fully collaborative record&mdash;written
-                collectively rather than drawn from past solo material. The new
-                songs explore themes of adulthood, Canadian heritage, shifting
-                identity, and the emotional maintenance that comes with holding
-                onto music as a core part of who you are.
+                The band is currently writing their first fully collaborative
+                record and focusing on building momentum through regional shows
+                and new releases.
               </p>
             </div>
           </div>
