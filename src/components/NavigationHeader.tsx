@@ -9,6 +9,11 @@ const navLinks = [
   { href: "#music", label: "Music" },
   { href: "#video", label: "Video" },
   { href: "#shows", label: "Shows" },
+  {
+    href: "https://brainrustonline.bandcamp.com/merch",
+    label: "Store",
+    external: true,
+  },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -43,6 +48,9 @@ const NavigationHeader: React.FC = () => {
               <a
                 key={link.href}
                 href={link.href}
+                {...("external" in link && link.external
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
                 className="text-xs tracking-[0.15em] uppercase text-muted hover:text-fg transition-colors"
               >
                 {link.label}
@@ -100,6 +108,9 @@ const NavigationHeader: React.FC = () => {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
+                {...("external" in link && link.external
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
                 className="block text-sm tracking-[0.15em] uppercase text-muted hover:text-fg transition-colors"
               >
                 {link.label}
