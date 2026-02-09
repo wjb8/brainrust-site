@@ -8,11 +8,7 @@ interface FadeUpProps {
   delay?: number;
 }
 
-const FadeUp: React.FC<FadeUpProps> = ({
-  children,
-  className = "",
-  delay = 0,
-}) => {
+const FadeUp = ({ children, className = "", delay = 0 }: FadeUpProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

@@ -3,6 +3,8 @@ import Link from "next/link";
 import { FaBandcamp, FaFacebook, FaInstagram } from "react-icons/fa";
 import NavigationHeader from "../components/NavigationHeader";
 import FadeUp from "../components/FadeUp";
+import HeroVideo from "../components/HeroVideo";
+import YouTubePlayer from "../components/YouTubePlayer";
 
 const members = [
   { name: "James Brown", role: "Guitar / Vocals" },
@@ -52,14 +54,15 @@ export default function Home() {
       <main>
         {/* ── Hero ── */}
         <section className="pt-14">
-          {/* Full-bleed wordmark */}
-          <div className="w-full mt-16 sm:mt-24 px-4 sm:px-0">
+          {/* Full-bleed wordmark with background video */}
+          <div className="relative w-full px-4 sm:px-0 overflow-hidden">
+            <HeroVideo />
             <Image
               src="/brainrust-wordmark.png"
               alt="Brainrust"
               width={1920}
               height={300}
-              className="w-full h-auto max-w-5xl mx-auto mix-blend-lighten"
+              className="relative z-10 w-full h-auto max-w-5xl mx-auto mix-blend-lighten"
               priority
             />
           </div>
@@ -79,15 +82,10 @@ export default function Home() {
           <FadeUp className="max-w-4xl mx-auto">
             <div className="space-y-16">
               <div>
-                <div className="aspect-video w-full bg-neutral-900">
-                  <iframe
-                    src="https://www.youtube.com/embed/FYTdapkB2xE"
-                    title="Brainrust — Ordinary (Official Video)"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="w-full h-full border-0"
-                  />
-                </div>
+                <YouTubePlayer
+                  videoId="FYTdapkB2xE"
+                  title="Brainrust — Ordinary (Official Video)"
+                />
                 <p className="mt-4 text-sm text-muted">
                   &ldquo;Ordinary&rdquo; &mdash; from{" "}
                   <em>Indistinct Chatter</em> (2024)
@@ -146,26 +144,11 @@ export default function Home() {
                 />
               </div>
             </div>
-            {/* Booking CTA after music */}
-            <div className="mt-16 pt-12 border-t border-neutral-800 text-center">
-              <p className="text-sm text-muted">
-                Interested in booking Brainrust?
-              </p>
-              <a
-                href="mailto:brainrustmusic@gmail.com"
-                className="inline-block mt-3 text-fg hover:text-white underline underline-offset-4 decoration-neutral-600 hover:decoration-white transition-colors text-sm"
-              >
-                brainrustmusic@gmail.com
-              </a>
-            </div>
           </FadeUp>
         </section>
 
         {/* ── About ── */}
-        <section
-          id="about"
-          className="scroll-mt-20 py-24 px-6 border-t border-neutral-800"
-        >
+        <section id="about" className="scroll-mt-20 py-24 px-6">
           <FadeUp className="max-w-2xl mx-auto">
             <h2 className="text-xs tracking-[0.3em] uppercase text-muted mb-12">
               About
@@ -191,7 +174,7 @@ export default function Home() {
         </section>
 
         {/* ── Band Photo + Members ── */}
-        <section className="py-24 px-6 border-t border-neutral-800">
+        <section className="py-24 px-6">
           <FadeUp className="max-w-3xl mx-auto">
             <Image
               src="/brainrust-promo.png"
@@ -218,10 +201,7 @@ export default function Home() {
         </section>
 
         {/* ── Shows ── */}
-        <section
-          id="shows"
-          className="scroll-mt-20 py-24 px-6 border-t border-neutral-800"
-        >
+        <section id="shows" className="scroll-mt-20 py-24 px-6">
           <FadeUp className="max-w-2xl mx-auto">
             <h2 className="text-xs tracking-[0.3em] uppercase text-muted mb-12">
               Live
@@ -270,10 +250,7 @@ export default function Home() {
         </section>
 
         {/* ── Contact ── */}
-        <section
-          id="contact"
-          className="scroll-mt-20 py-24 px-6 border-t border-neutral-800"
-        >
+        <section id="contact" className="scroll-mt-20 py-24 px-6">
           <FadeUp className="max-w-2xl mx-auto">
             <h2 className="text-xs tracking-[0.3em] uppercase text-muted mb-12">
               Contact

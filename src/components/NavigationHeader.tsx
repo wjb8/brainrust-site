@@ -5,9 +5,9 @@ import Link from "next/link";
 import { FaBandcamp, FaFacebook, FaInstagram } from "react-icons/fa";
 
 const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#music", label: "Music" },
   { href: "#video", label: "Video" },
+  { href: "#music", label: "Music" },
+  { href: "#about", label: "About" },
   { href: "#shows", label: "Shows" },
   {
     href: "https://brainrustonline.bandcamp.com/merch",
@@ -35,7 +35,7 @@ const socialLinks = [
   },
 ];
 
-const NavigationHeader: React.FC = () => {
+const NavigationHeader = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
