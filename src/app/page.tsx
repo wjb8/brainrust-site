@@ -1,109 +1,292 @@
 import Image from "next/image";
+import Link from "next/link";
+import { FaBandcamp, FaFacebook, FaInstagram } from "react-icons/fa";
+import NavigationHeader from "../components/NavigationHeader";
+
+const members = [
+  { name: "James Brown", role: "Guitar / Vocals" },
+  { name: "Kyle Marchand", role: "Guitar / Vocals" },
+  { name: "Nick Hildenbrand", role: "Percussion" },
+  { name: "Matt Findlater", role: "Bass" },
+];
+
+const streamingLinks = [
+  {
+    label: "Bandcamp",
+    href: "https://brainrustonline.bandcamp.com",
+  },
+  {
+    label: "Tidal",
+    href: "https://tidal.com/browse/album/361960951",
+  },
+  {
+    label: "Apple Music",
+    href: "https://music.apple.com/ca/artist/brainrust/1741818338",
+  },
+];
+
+const socialLinks = [
+  {
+    href: "https://brainrustonline.bandcamp.com",
+    icon: FaBandcamp,
+    label: "Bandcamp",
+  },
+  {
+    href: "https://www.facebook.com/people/Brainrust/61558737663532/",
+    icon: FaFacebook,
+    label: "Facebook",
+  },
+  {
+    href: "https://www.instagram.com/brainrust.online",
+    icon: FaInstagram,
+    label: "Instagram",
+  },
+];
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
+    <>
+      <NavigationHeader />
+
+      <main>
+        {/* ── Hero ── */}
+        <section className="pt-14">
+          {/* Full-bleed wordmark */}
+          <div className="w-full mt-16 sm:mt-24 px-4 sm:px-0">
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
+              src="/brainrust-wordmark.png"
+              alt="Brainrust"
+              width={1920}
+              height={300}
+              className="w-full h-auto max-w-5xl mx-auto mix-blend-lighten"
               priority
             />
-          </a>
+          </div>
+          <div className="mb-12 sm:mb-20" />
+        </section>
+
+        {/* ── Video ── */}
+        <section id="video" className="py-24 px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-16">
+              <div>
+                <div className="aspect-video w-full bg-neutral-900">
+                  <iframe
+                    src="https://www.youtube.com/embed/FYTdapkB2xE"
+                    title="Brainrust — Ordinary (Official Video)"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full border-0"
+                  />
+                </div>
+                <p className="mt-4 text-sm text-muted">
+                  &ldquo;Ordinary&rdquo; &mdash; from{" "}
+                  <em>Indistinct Chatter</em> (2024)
+                </p>
+              </div>
+              {/* Add additional videos here */}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Music ── */}
+        <section id="music" className="py-24 px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-xs tracking-[0.3em] uppercase text-muted mb-12">
+              Music
+            </h2>
+
+            <div className="flex flex-col sm:flex-row gap-8">
+              {/* Album art + details */}
+              <div className="sm:w-64 flex-shrink-0">
+                <Image
+                  src="/indistinct-chatter-cover.png"
+                  alt="Indistinct Chatter — album cover"
+                  width={600}
+                  height={600}
+                  className="w-full h-auto"
+                />
+                <div className="mt-4">
+                  <h3 className="text-lg font-medium text-fg">
+                    Indistinct Chatter
+                  </h3>
+                  <p className="text-sm text-muted mt-1">2024</p>
+                  <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2">
+                    {streamingLinks.map((link) => (
+                      <a
+                        key={link.label}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-fg hover:text-white underline underline-offset-4 decoration-neutral-600 hover:decoration-white transition-colors"
+                      >
+                        {link.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Bandcamp embed */}
+              <div className="flex-1 min-w-0">
+                <iframe
+                  title="Indistinct Chatter by brainrust on Bandcamp"
+                  src="https://bandcamp.com/EmbeddedPlayer/album=1170355516/size=large/bgcol=0a0a0a/linkcol=e5e5e5/tracklist=true/artwork=none/transparent=true/"
+                  seamless
+                  className="border-0 w-full h-full min-h-[400px]"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── About ── */}
+        <section id="about" className="py-24 px-6 border-t border-neutral-800">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="text-xs tracking-[0.3em] uppercase text-muted mb-12">
+              About
+            </h2>
+            <div className="space-y-6 text-base leading-relaxed text-neutral-300">
+              <p>
+                Brainrust is a four-piece rock band from Windsor, Ontario,
+                crafting emotionally charged, exploratory music that blends
+                elements of experimental, alternative, and post-hardcore
+                traditions.
+              </p>
+              <p>
+                Formed in 2022 from the merging of two long-running solo
+                projects, Brainrust began as an outlet for songs written as far
+                back as 2016. Founding members James Brown (guitar/vocals) and
+                Kyle Marchand (guitar/vocals) brought their collaborative energy
+                into a full-band dynamic with Matt Findlater (bass) and Nick
+                Hildenbrand (drums), solidifying a lineup that combines dynamic
+                musicianship with a reflective edge.
+              </p>
+              <p>
+                The band&apos;s 2024 debut album,{" "}
+                <em className="text-fg">Indistinct Chatter</em>, showcased this
+                range and was accompanied by a self-produced video for the
+                single &ldquo;Ordinary.&rdquo; Currently, Brainrust is preparing
+                their first fully collaborative record&mdash;written
+                collectively rather than drawn from past solo material. The new
+                songs explore themes of adulthood, Canadian heritage, shifting
+                identity, and the emotional maintenance that comes with holding
+                onto music as a core part of who you are.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Band Photo + Members ── */}
+        <section className="py-24 px-6 border-t border-neutral-800">
+          <div className="max-w-3xl mx-auto">
+            <Image
+              src="/brainrust-promo.png"
+              alt="Brainrust — band photo"
+              width={1200}
+              height={1200}
+              className="w-full h-auto"
+              style={{
+                maskImage:
+                  "radial-gradient(circle, black 50%, transparent 65%)",
+                WebkitMaskImage:
+                  "radial-gradient(circle, black 50%, transparent 65%)",
+              }}
+            />
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-10">
+              {members.map((member) => (
+                <div key={member.name}>
+                  <p className="text-fg text-sm font-medium">{member.name}</p>
+                  <p className="text-xs text-muted mt-1">{member.role}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Shows ── */}
+        <section id="shows" className="py-24 px-6 border-t border-neutral-800">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="text-xs tracking-[0.3em] uppercase text-muted mb-12">
+              Live
+            </h2>
+
+            <ul className="space-y-5 text-neutral-300">
+              <li className="flex items-baseline gap-4">
+                <span className="text-xs text-muted font-mono shrink-0 w-24">
+                  Aug 16, 2025
+                </span>
+                <span className="text-sm">Dropped on Drouillard Festival</span>
+              </li>
+              <li className="flex items-baseline gap-4">
+                <span className="text-xs text-muted font-mono shrink-0 w-24">
+                  Mar 28, 2025
+                </span>
+                <span className="text-sm">
+                  w/ The World Is A Beautiful Place &amp; I Am No Longer Afraid
+                  To Die
+                </span>
+              </li>
+              <li className="flex items-baseline gap-4">
+                <span className="text-xs text-muted font-mono shrink-0 w-24">
+                  Oct 19, 2024
+                </span>
+                <span className="text-sm">w/ Bonnie Trash, Burner</span>
+              </li>
+              <li className="flex items-baseline gap-4">
+                <span className="text-xs text-muted font-mono shrink-0 w-24">
+                  Nov 10, 2023
+                </span>
+                <span className="text-sm">w/ Cory Hanson</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        {/* ── Contact ── */}
+        <section
+          id="contact"
+          className="py-24 px-6 border-t border-neutral-800"
+        >
+          <div className="max-w-2xl mx-auto">
+            <h2 className="text-xs tracking-[0.3em] uppercase text-muted mb-12">
+              Contact
+            </h2>
+            <p className="text-neutral-300 text-sm">
+              For booking, press inquiries, and all other contact:
+            </p>
+            <a
+              href="mailto:brainrustmusic@gmail.com"
+              className="inline-block mt-4 text-fg hover:text-white underline underline-offset-4 decoration-neutral-600 hover:decoration-white transition-colors text-sm"
+            >
+              brainrustmusic@gmail.com
+            </a>
+          </div>
+        </section>
+      </main>
+
+      {/* ── Footer ── */}
+      <footer className="py-12 px-6 border-t border-neutral-800">
+        <div className="max-w-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+          <p className="text-xs text-muted">
+            &copy; 2026 Brainrust. All rights reserved.
+          </p>
+          <div className="flex items-center gap-4">
+            {socialLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={link.label}
+                className="text-muted hover:text-fg transition-colors"
+              >
+                <link.icon size={16} />
+              </Link>
+            ))}
+          </div>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      </footer>
+    </>
   );
 }
