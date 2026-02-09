@@ -62,12 +62,23 @@ export default function Home() {
               priority
             />
           </div>
+          <div className="max-w-2xl mx-auto text-center mt-8 sm:mt-12 px-6">
+            <a
+              href="mailto:brainrustmusic@gmail.com"
+              className="inline-block mt-6 px-6 py-2.5 text-xs tracking-[0.15em] uppercase border border-neutral-600 text-fg hover:bg-fg hover:text-bg transition-colors"
+            >
+              Booking &amp; Contact
+            </a>
+          </div>
           <div className="mb-12 sm:mb-20" />
         </section>
 
         {/* ── Video ── */}
         <section id="video" className="py-24 px-6">
           <div className="max-w-4xl mx-auto">
+            <h2 className="text-xs tracking-[0.3em] uppercase text-muted mb-12">
+              Video
+            </h2>
             <div className="space-y-16">
               <div>
                 <div className="aspect-video w-full bg-neutral-900">
@@ -136,6 +147,18 @@ export default function Home() {
                   className="border-0 w-full h-full min-h-[400px]"
                 />
               </div>
+            </div>
+            {/* Booking CTA after music */}
+            <div className="mt-16 pt-12 border-t border-neutral-800 text-center">
+              <p className="text-sm text-muted">
+                Interested in booking Brainrust?
+              </p>
+              <a
+                href="mailto:brainrustmusic@gmail.com"
+                className="inline-block mt-3 text-fg hover:text-white underline underline-offset-4 decoration-neutral-600 hover:decoration-white transition-colors text-sm"
+              >
+                brainrustmusic@gmail.com
+              </a>
             </div>
           </div>
         </section>
@@ -207,6 +230,16 @@ export default function Home() {
               Live
             </h2>
 
+            <h3 className="text-sm tracking-[0.1em] uppercase text-fg mb-6">
+              Upcoming
+            </h3>
+            <p className="text-sm text-muted italic mb-16">
+              New dates coming soon. Get in touch for booking.
+            </p>
+
+            <h3 className="text-sm tracking-[0.1em] uppercase text-fg mb-6">
+              Past
+            </h3>
             <ul className="space-y-5 text-neutral-300">
               <li className="flex items-baseline gap-4">
                 <span className="text-xs text-muted font-mono shrink-0 w-24">
@@ -263,24 +296,32 @@ export default function Home() {
 
       {/* ── Footer ── */}
       <footer className="py-12 px-6 border-t border-neutral-800">
-        <div className="max-w-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
-          <p className="text-xs text-muted">
+        <div className="max-w-2xl mx-auto">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+            <a
+              href="mailto:brainrustmusic@gmail.com"
+              className="text-sm text-fg hover:text-white underline underline-offset-4 decoration-neutral-600 hover:decoration-white transition-colors"
+            >
+              brainrustmusic@gmail.com
+            </a>
+            <div className="flex items-center gap-4">
+              {socialLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.label}
+                  className="text-muted hover:text-fg transition-colors"
+                >
+                  <link.icon size={16} />
+                </Link>
+              ))}
+            </div>
+          </div>
+          <p className="text-xs text-muted mt-6 text-center sm:text-left">
             &copy; 2026 Brainrust. All rights reserved.
           </p>
-          <div className="flex items-center gap-4">
-            {socialLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={link.label}
-                className="text-muted hover:text-fg transition-colors"
-              >
-                <link.icon size={16} />
-              </Link>
-            ))}
-          </div>
         </div>
       </footer>
     </>
