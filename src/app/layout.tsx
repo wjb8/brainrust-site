@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "Brainrust — Windsor, Ontario",
   description:
     "Brainrust is a four-piece rock band from Windsor, Ontario, crafting emotionally charged, exploratory music that blends elements of experimental, alternative, and post-hardcore traditions.",
+  alternates: {
+    canonical: "https://brainrustonline.com",
+  },
   openGraph: {
     title: "Brainrust",
     description: "Emotionally charged, exploratory rock from Windsor, Ontario.",
