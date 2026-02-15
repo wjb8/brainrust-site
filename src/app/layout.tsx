@@ -9,15 +9,14 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://brainrustonline.com"),
-  title: "Brainrust — Windsor, Ontario",
-  description:
-    "Brainrust is a four-piece rock band from Windsor, Ontario, crafting emotionally charged, exploratory music that blends elements of experimental, alternative, and post-hardcore traditions.",
+  title: "Brainrust",
+  description: "Brainrust is a rock band from Windsor, Ontario.",
   alternates: {
     canonical: "https://brainrustonline.com",
   },
   openGraph: {
     title: "Brainrust",
-    description: "Emotionally charged, exploratory rock from Windsor, Ontario.",
+    description: "Brainrust is a rock band from Windsor, Ontario.",
     type: "website",
     url: "https://brainrustonline.com",
     images: ["/brainrust-promo.png"],
