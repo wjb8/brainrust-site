@@ -65,7 +65,7 @@ const NavigationHeader = () => {
         <Link
           href="/"
           aria-label="Brainrust home"
-          className={`hidden md:flex absolute left-6 top-1/2 -translate-y-1/2 items-center text-muted hover:text-fg transition-all duration-500 ${
+          className={`hidden md:flex absolute left-3 lg:left-4 top-1/2 -translate-y-1/2 items-center text-muted hover:text-fg transition-all duration-500 ${
             showBrandMark
               ? "opacity-100 translate-x-0"
               : "opacity-0 -translate-x-2 pointer-events-none"
