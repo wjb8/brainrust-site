@@ -76,7 +76,7 @@ export default async function Home() {
 
       <main>
         {/* ── Hero ── */}
-        <section className="pt-14">
+        <section id="hero-banner" className="pt-14">
           {/* Full-bleed wordmark with background video */}
           <div className="relative w-full px-4 sm:px-0 overflow-hidden">
             <HeroVideo />
