@@ -236,17 +236,21 @@ export default async function Home() {
                 </span>
                 <div className="text-sm text-neutral-300 space-y-2">
                   <p>
-                    Playing Bog Moss&apos;s album release for{" "}
-                    <em className="text-fg">Beneath</em> on a boat.
+                    Bog Moss&apos;s album release for{" "}
+                    <em className="text-fg">Beneath</em> on the Macassa Bay
+                    cruise boat
                   </p>
                   <a
-                    href="https://bogmoss.ca"
+                    href="https://bogmossband.ca"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block text-fg hover:text-white underline underline-offset-4 decoration-neutral-600 hover:decoration-white transition-colors"
                   >
-                    Details &amp; tickets at bogmoss.ca
+                    Details &amp; tickets at bogmossband.ca
                   </a>
+                  <p className="text-xs text-muted">
+                    Additional dates will be announced soon.
+                  </p>
                 </div>
               </div>
             </div>
