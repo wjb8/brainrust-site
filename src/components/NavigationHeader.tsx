@@ -5,11 +5,11 @@ import Link from "next/link";
 import { FaBandcamp, FaFacebook, FaInstagram } from "react-icons/fa";
 
 const navLinks = [
+  { href: "#photos", label: "Photos" },
   { href: "#video", label: "Video" },
   { href: "#music", label: "Music" },
-  { href: "#about", label: "About" },
-  { href: "#photos", label: "Photos" },
   { href: "#shows", label: "Shows" },
+  { href: "#about", label: "About" },
   {
     href: "https://brainrustonline.bandcamp.com/merch",
     label: "Store",
