@@ -1,16 +1,19 @@
+import { readdir } from "fs/promises";
 import Image from "next/image";
 import Link from "next/link";
+import path from "path";
 import { FaBandcamp, FaFacebook, FaInstagram } from "react-icons/fa";
 import NavigationHeader from "../components/NavigationHeader";
 import FadeUp from "../components/FadeUp";
 import HeroVideo from "../components/HeroVideo";
+import LivePhotoCarousel from "../components/LivePhotoCarousel";
 import YouTubePlayer from "../components/YouTubePlayer";
 
 const members = [
   { name: "James Brown", role: "Guitar / Vocals" },
   { name: "Kyle Marchand", role: "Guitar / Vocals" },
   { name: "Nick Hildenbrand", role: "Percussion" },
-  { name: "Matt Findlater", role: "Bass" },
+  { name: "Justyn Brando", role: "Bass" },
 ];
 
 const streamingLinks = [
@@ -46,7 +49,27 @@ const socialLinks = [
   },
 ];
 
-export default function Home() {
+const IMAGE_EXTENSIONS = new Set([".jpg", ".jpeg", ".png", ".webp", ".avif"]);
+
+async function getLivePhotos() {
+  const livePhotosDir = path.join(process.cwd(), "public", "live-photos");
+  const entries = await readdir(livePhotosDir, { withFileTypes: true });
+
+  return entries
+    .filter((entry) => {
+      if (!entry.isFile()) return false;
+      return IMAGE_EXTENSIONS.has(path.extname(entry.name).toLowerCase());
+    })
+    .sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }))
+    .map((entry, index) => ({
+      src: `/live-photos/${entry.name}`,
+      alt: `Brainrust live photo ${index + 1}`,
+    }));
+}
+
+export default async function Home() {
+  const livePhotos = await getLivePhotos();
+
   return (
     <>
       <NavigationHeader />
@@ -67,42 +90,38 @@ export default function Home() {
             />
           </div>
           <div className="max-w-2xl mx-auto text-center mt-8 sm:mt-12 px-6">
-            <a
-              href="mailto:brainrustmusic@gmail.com"
-              className="inline-block mt-6 px-6 py-2.5 text-xs tracking-[0.15em] uppercase border border-neutral-600 text-fg hover:bg-fg hover:text-bg transition-colors"
-            >
-              Booking &amp; Contact
-            </a>
+            <p className="text-sm text-neutral-300 leading-relaxed">
+              Windsor, Ontario guitar rock.{" "}
+              <em className="text-fg">Indistinct Chatter</em> is out now.
+            </p>
           </div>
-          <div className="mb-12 sm:mb-20" />
+          <div className="mb-8 sm:mb-14" />
+        </section>
+
+        {/* ── Photos ── */}
+        <section id="photos" className="scroll-mt-20 py-12 sm:py-16 px-6">
+          <FadeUp className="max-w-4xl mx-auto">
+            <LivePhotoCarousel photos={livePhotos} />
+          </FadeUp>
         </section>
 
         {/* ── Video ── */}
-        <section id="video" className="scroll-mt-20 py-24 px-6">
+        <section id="video" className="scroll-mt-20 py-12 sm:py-16 px-6">
           <FadeUp className="max-w-4xl mx-auto">
-            <div className="space-y-16">
-              <div>
-                <YouTubePlayer
-                  videoId="FYTdapkB2xE"
-                  title="Brainrust — Ordinary (Official Video)"
-                />
-                <p className="mt-4 text-sm text-muted">
-                  &ldquo;Ordinary&rdquo; &mdash; from{" "}
-                  <em>Indistinct Chatter</em> (2024)
-                </p>
-              </div>
-              {/* Add additional videos here */}
-            </div>
+            <YouTubePlayer
+              videoId="FYTdapkB2xE"
+              title="Brainrust — Ordinary (Official Video)"
+            />
+            <p className="mt-4 text-sm text-muted">
+              &ldquo;Ordinary&rdquo; &mdash; from <em>Indistinct Chatter</em>{" "}
+              (2024)
+            </p>
           </FadeUp>
         </section>
 
         {/* ── Music ── */}
         <section id="music" className="scroll-mt-20 py-24 px-6">
           <FadeUp className="max-w-4xl mx-auto">
-            <h2 className="text-xs tracking-[0.3em] uppercase text-muted mb-12">
-              Music
-            </h2>
-
             <div className="flex flex-col sm:flex-row gap-8">
               {/* Album art + details */}
               <div className="sm:w-64 flex-shrink-0">
@@ -210,9 +229,27 @@ export default function Home() {
             <h3 className="text-sm tracking-[0.1em] uppercase text-fg mb-6">
               Upcoming
             </h3>
-            <p className="text-sm text-muted italic mb-16">
-              New dates coming soon. Get in touch for booking.
-            </p>
+            <div className="mb-16">
+              <div className="flex items-baseline gap-4">
+                <span className="text-xs text-muted font-mono shrink-0 w-24">
+                  May 21, 2026
+                </span>
+                <div className="text-sm text-neutral-300 space-y-2">
+                  <p>
+                    Playing Bog Moss&apos;s album release for{" "}
+                    <em className="text-fg">Beneath</em> on a boat.
+                  </p>
+                  <a
+                    href="https://bogmoss.ca"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block text-fg hover:text-white underline underline-offset-4 decoration-neutral-600 hover:decoration-white transition-colors"
+                  >
+                    Details &amp; tickets at bogmoss.ca
+                  </a>
+                </div>
+              </div>
+            </div>
 
             <h3 className="text-sm tracking-[0.1em] uppercase text-fg mb-6">
               Past

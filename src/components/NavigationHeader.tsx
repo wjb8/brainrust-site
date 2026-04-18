@@ -8,6 +8,7 @@ const navLinks = [
   { href: "#video", label: "Video" },
   { href: "#music", label: "Music" },
   { href: "#about", label: "About" },
+  { href: "#photos", label: "Photos" },
   { href: "#shows", label: "Shows" },
   {
     href: "https://brainrustonline.bandcamp.com/merch",
