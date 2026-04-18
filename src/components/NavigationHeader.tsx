@@ -52,7 +52,7 @@ const NavigationHeader = () => {
       {
         threshold: 0.1,
         rootMargin: "-56px 0px 0px 0px",
-      }
+      },
     );
 
     observer.observe(heroBanner);
@@ -61,25 +61,25 @@ const NavigationHeader = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-bg/90 backdrop-blur-sm border-b border-neutral-800">
-      <div className="relative max-w-6xl mx-auto px-6 h-14 flex items-center justify-center">
-        <Link
-          href="/"
-          aria-label="Brainrust home"
-          className={`hidden md:flex absolute left-3 lg:left-4 top-1/2 -translate-y-1/2 items-center text-muted hover:text-fg transition-all duration-500 ${
-            showBrandMark
-              ? "opacity-100 translate-x-0"
-              : "opacity-0 -translate-x-2 pointer-events-none"
-          }`}
-        >
-          <Image
-            src="/brainrust-wordmark-transparent.png"
-            alt="Brainrust"
-            width={360}
-            height={56}
-            className="h-5 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
-          />
-        </Link>
+      <Link
+        href="/"
+        aria-label="Brainrust home"
+        className={`hidden md:flex absolute left-4 lg:left-5 top-1/2 -translate-y-1/2 items-center text-muted hover:text-fg transition-all duration-500 ${
+          showBrandMark
+            ? "opacity-100 translate-x-0"
+            : "opacity-0 -translate-x-2 pointer-events-none"
+        }`}
+      >
+        <Image
+          src="/brainrust-wordmark-transparent.png"
+          alt="Brainrust"
+          width={360}
+          height={56}
+          className="h-5 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
+        />
+      </Link>
 
+      <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-center">
         {/* Desktop nav — centered links with social icons at the end */}
         <div className="hidden md:flex items-center gap-8">
           <div className="flex items-center gap-6">
