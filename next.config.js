@@ -6,12 +6,11 @@ const nextConfig = {
         source: "/:path*",
         has: [
           {
-            type: "header",
-            key: "x-forwarded-proto",
-            value: "http",
+            type: "host",
+            value: "brainrustonline.com",
           },
         ],
-        destination: "https://brainrustonline.com/:path*",
+        destination: "https://www.brainrustonline.com/:path*",
         permanent: true,
       },
     ];

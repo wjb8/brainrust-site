@@ -8,17 +8,17 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://brainrustonline.com"),
+  metadataBase: new URL("https://www.brainrustonline.com"),
   title: "Brainrust",
   description: "Brainrust is a rock band from Windsor, Ontario.",
   alternates: {
-    canonical: "https://brainrustonline.com",
+    canonical: "https://www.brainrustonline.com",
   },
   openGraph: {
     title: "Brainrust",
     description: "Brainrust is a rock band from Windsor, Ontario.",
     type: "website",
-    url: "https://brainrustonline.com",
+    url: "https://www.brainrustonline.com",
     images: ["/brainrust-promo.png"],
   },
 };

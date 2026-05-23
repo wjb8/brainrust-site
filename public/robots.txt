@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://brainrustonline.com/sitemap.xml
+Sitemap: https://www.brainrustonline.com/sitemap.xml
