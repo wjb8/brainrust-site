@@ -235,7 +235,7 @@ export default async function Home() {
                   Sep 12, 2026
                 </span>
                 <div className="text-sm text-neutral-300 space-y-2">
-                  <p>Rick Maguire from Pile at Meteor</p>
+                  <p>Windsor, ON - Meteor w/ Rick Maguire from Pile</p>
                   <a
                     href="https://www.showpass.com/rick-maguire-pile-brainrust-at-meteor/"
                     target="_blank"
@@ -257,7 +257,7 @@ export default async function Home() {
                   Jul 12, 2026
                 </span>
                 <span className="text-sm">
-                  Lambfest in Windsor, ON w/ Burner
+                  Windsor, ON - Lambfest w/ Burner
                 </span>
               </li>
               <li className="flex items-baseline gap-4">
@@ -265,7 +265,7 @@ export default async function Home() {
                   Jul 11, 2026
                 </span>
                 <span className="text-sm">
-                  Maud&apos;s Variety in Sarnia, ON w/ Burner, Stacy Cross
+                  Sarnia, ON - Maud&apos;s Variety w/ Burner, Stacy Cross
                 </span>
               </li>
               <li className="flex items-baseline gap-4">
@@ -273,36 +273,41 @@ export default async function Home() {
                   May 21, 2026
                 </span>
                 <span className="text-sm">
-                  Bog Moss&apos;s <em>Beneath</em> album release on the Macassa Bay
-                  cruise boat
+                  Windsor, ON - Macassa Bay cruise boat w/ Bog Moss
                 </span>
               </li>
               <li className="flex items-baseline gap-4">
                 <span className="text-xs text-muted font-mono shrink-0 w-24">
                   Aug 16, 2025
                 </span>
-                <span className="text-sm">Dropped on Drouillard Festival</span>
+                <span className="text-sm">
+                  Windsor, ON - Dropped on Drouillard Festival
+                </span>
               </li>
               <li className="flex items-baseline gap-4">
                 <span className="text-xs text-muted font-mono shrink-0 w-24">
                   Mar 28, 2025
                 </span>
                 <span className="text-sm">
-                  w/ The World Is A Beautiful Place &amp; I Am No Longer Afraid
-                  To Die
+                  Windsor, ON - Meteor w/ The World Is A Beautiful Place &amp; I
+                  Am No Longer Afraid To Die
                 </span>
               </li>
               <li className="flex items-baseline gap-4">
                 <span className="text-xs text-muted font-mono shrink-0 w-24">
                   Oct 19, 2024
                 </span>
-                <span className="text-sm">w/ Bonnie Trash, Burner</span>
+                <span className="text-sm">
+                  Windsor, ON - Meteor w/ Bonnie Trash, Burner
+                </span>
               </li>
               <li className="flex items-baseline gap-4">
                 <span className="text-xs text-muted font-mono shrink-0 w-24">
                   Nov 10, 2023
                 </span>
-                <span className="text-sm">w/ Cory Hanson</span>
+                <span className="text-sm">
+                  Windsor, ON - Meteor w/ Cory Hanson
+                </span>
               </li>
             </ul>
           </FadeUp>
