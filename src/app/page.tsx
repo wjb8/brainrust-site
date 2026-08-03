@@ -232,25 +232,18 @@ export default async function Home() {
             <div className="mb-16">
               <div className="flex items-baseline gap-4">
                 <span className="text-xs text-muted font-mono shrink-0 w-24">
-                  May 21, 2026
+                  Sep 12, 2026
                 </span>
                 <div className="text-sm text-neutral-300 space-y-2">
-                  <p>
-                    Bog Moss&apos;s album release for{" "}
-                    <em className="text-fg">Beneath</em> on the Macassa Bay
-                    cruise boat
-                  </p>
+                  <p>Rick Maguire from Pile at Meteor</p>
                   <a
-                    href="https://bogmossband.ca"
+                    href="https://www.showpass.com/rick-maguire-pile-brainrust-at-meteor/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block text-fg hover:text-white underline underline-offset-4 decoration-neutral-600 hover:decoration-white transition-colors"
                   >
-                    Details &amp; tickets at bogmossband.ca
+                    Tickets
                   </a>
-                  <p className="text-xs text-muted">
-                    Additional dates will be announced soon.
-                  </p>
                 </div>
               </div>
             </div>
@@ -259,6 +252,15 @@ export default async function Home() {
               Past
             </h3>
             <ul className="space-y-5 text-neutral-300">
+              <li className="flex items-baseline gap-4">
+                <span className="text-xs text-muted font-mono shrink-0 w-24">
+                  May 21, 2026
+                </span>
+                <span className="text-sm">
+                  Bog Moss&apos;s <em>Beneath</em> album release on the Macassa Bay
+                  cruise boat
+                </span>
+              </li>
               <li className="flex items-baseline gap-4">
                 <span className="text-xs text-muted font-mono shrink-0 w-24">
                   Aug 16, 2025
