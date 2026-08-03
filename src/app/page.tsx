@@ -254,6 +254,22 @@ export default async function Home() {
             <ul className="space-y-5 text-neutral-300">
               <li className="flex items-baseline gap-4">
                 <span className="text-xs text-muted font-mono shrink-0 w-24">
+                  Jul 12, 2026
+                </span>
+                <span className="text-sm">
+                  Lambfest in Windsor, ON w/ Burner
+                </span>
+              </li>
+              <li className="flex items-baseline gap-4">
+                <span className="text-xs text-muted font-mono shrink-0 w-24">
+                  Jul 11, 2026
+                </span>
+                <span className="text-sm">
+                  Maud&apos;s Variety in Sarnia, ON w/ Burner, Stacy Cross
+                </span>
+              </li>
+              <li className="flex items-baseline gap-4">
+                <span className="text-xs text-muted font-mono shrink-0 w-24">
                   May 21, 2026
                 </span>
                 <span className="text-sm">
