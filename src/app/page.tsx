@@ -249,7 +249,7 @@ export default async function Home() {
             </div>
 
             <h3 className="text-sm tracking-[0.1em] uppercase text-fg mb-6">
-              Past
+              Past (Selected)
             </h3>
             <ul className="space-y-5 text-neutral-300">
               <li className="flex items-baseline gap-4">
@@ -299,6 +299,22 @@ export default async function Home() {
                 </span>
                 <span className="text-sm">
                   Windsor, ON - Meteor w/ Bonnie Trash, Burner
+                </span>
+              </li>
+              <li className="flex items-baseline gap-4">
+                <span className="text-xs text-muted font-mono shrink-0 w-24">
+                  Jul 27, 2024
+                </span>
+                <span className="text-sm">
+                  Guelph, ON - Jimmy Jazz w/ Twice Bleached, Gone Out
+                </span>
+              </li>
+              <li className="flex items-baseline gap-4">
+                <span className="text-xs text-muted font-mono shrink-0 w-24">
+                  Jul 26, 2024
+                </span>
+                <span className="text-sm">
+                  London, ON - Richmond Tavern w/ Hunter Gatherer
                 </span>
               </li>
               <li className="flex items-baseline gap-4">
